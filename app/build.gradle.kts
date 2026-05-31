@@ -19,6 +19,8 @@ android {
         }
     }
 
+    // Removed signingConfigs to fix build issue when keystore properties are missing
+    /*
     signingConfigs {
         create("release") {
             val props = Properties().apply {
@@ -30,6 +32,7 @@ android {
             keyPassword = props.getProperty("KEY_PASSWORD", "")
         }
     }
+    */
 
     defaultConfig {
         applicationId = "com.aga.ultra.agent"
