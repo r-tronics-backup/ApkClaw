@@ -27,7 +27,7 @@ jobs:
         run: chmod +x gradlew
 
       - name: Build with Gradle
-        run: ./gradlew assembleDebug -Pandroid.bundle.enableUncompressedNativeLibs=false
+        run: ./gradlew assembleDebug
 
       - name: Find APK
         id: find_apk
