@@ -39,6 +39,10 @@ jobs:
           echo "Found APK: $APK_PATH"
           echo "Inspecting APK structure..."
           unzip -l $APK_PATH | grep lib/
+          echo "Checking for 32-bit ARM support..."
+          unzip -l $APK_PATH | grep "lib/armeabi-v7a/libmmkv.so" || exit 1
+          echo "Checking for 32-bit x86 support..."
+          unzip -l $APK_PATH | grep "lib/x86/libmmkv.so" || exit 1
 
       - name: Create Release
         id: create_release

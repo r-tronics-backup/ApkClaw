@@ -51,6 +51,14 @@ android {
         packaging {
             jniLibs {
                 useLegacyPackaging = true
+                keepDebugSymbols.add("**/*.so")
+            }
+            resources {
+                excludes += setOf(
+                    "lib/armeabi/**",
+                    "lib/mips/**",
+                    "lib/mips64/**"
+                )
             }
         }
     }
